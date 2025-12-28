@@ -1,0 +1,13 @@
+body {
+    font: normal 15pt Arial;
+}
+
+input {
+    padding: 20px;
+}
+
+input:hover {
+    border: none;
+    background-color: darkgray;
+    color: white;
+}
