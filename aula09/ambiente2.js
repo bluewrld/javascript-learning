@@ -4,7 +4,7 @@ num.push(1)
 
 console.log(num)
 
-let pos = num.indexOf(2)
+let pos = num.indexOf(3)
 
 if (pos == -1){
     console.log('O valor não foi encontrado!')
