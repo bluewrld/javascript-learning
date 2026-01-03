@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando até um número qualquer</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 14pt;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        #btn {
+            padding: 10px 30px;
+            margin: 10px 5px;
+            background-color: green;
+            color: white;
+            border: 3px solid black;
+            font-size: 14pt;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #btn:hover {
+            background-color: darkgreen;
+        }
+        
+        #clearbtn {
+            padding: 10px 30px;
+            margin: 10px 5px;
+            font-size: 14pt;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    
+    <label for="inicio">Início da contagem:</label> 
+    <input type="number" id="inicio" placeholder="Início da contagem">
+    
+    <label for="fim">Fim da contagem:</label> 
+    <input type="number" id="fim" placeholder="Fim da contagem">
+    
+    <button type="button" id="btn">Contar</button>
+    <button type="button" id="clearbtn">Limpar</button>
+    
+    <div id="res"><p>Preencha os dados acima e aperte o botão.</p></div>
+    <script src="script.js"></script>
+</body>
+</html>
