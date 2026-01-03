@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 14pt;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        #btn {
+            padding: 10px 30px;
+            margin: 10px 5px;
+            background-color: green;
+            color: white;
+            border: 3px solid black;
+            font-size: 14pt;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        #btn:hover {
+            background-color: darkgreen;
+        }
+        
+        #clearbtn {
+            padding: 10px 30px;
+            margin: 10px 5px;
+            font-size: 14pt;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Fatorial</h1>
+    
+    <p>Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
+    
+    <label for="inicio">Número:</label> 
+    <input type="number" id="inicio" placeholder="número">
+    
+    <button type="button" id="btn">Fatorial</button>
+    <button type="button" id="clearbtn">Limpar</button>
+    
+    <div id="res"><p>Preencha os dados acima e aperte o botão.</p></div>
+    <script src="script.js"></script>
+</body>
+</html>
