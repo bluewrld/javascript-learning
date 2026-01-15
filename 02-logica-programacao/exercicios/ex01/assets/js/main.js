@@ -1,5 +1,5 @@
 // Capturar evento de submit do formulário
-const form = document.querySelector('#form')
+const form = document.querySelector('#form');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -15,32 +15,39 @@ form.addEventListener('submit', function (e) {
     }
 
     if (!altura) {
-        setResultado('Altura inválida', false)
+        setResultado('Altura inválida', false);
         return;
     }
 
     const imc = getImc(peso, altura);
-    const nivelImc = getNivelImc(imc)
+    const nivelImc = getNivelImc(imc);
 
-    const msg = `Seu IMC é ${imc} (${nivelImc})`
-    setResultado(msg, true)
-})
+    const msg = `Seu IMC é ${imc} (<strong>${nivelImc}</strong>)`;
+    
+    setResultado(msg, true);
+});
 
 function getNivelImc (imc) {
-    const nivel = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau 1',
-    'Obesidade grau 2', 'Obesidade grau 3'];
+    const nivel = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 
+    'Obesidade grau 1', 'Obesidade grau 2', 'Obesidade grau 3'];
 
-    if (imc >= 39.9) return nivel[5]
-    if (imc >= 34.9) return nivel[4]
-    if (imc >= 29.9) return nivel[3]
-    if (imc >= 24.9) return nivel [2]
-    if (imc >= 18.5) return nivel[1]
-    if (imc < 18.5) return nivel[0]
+    if (imc >= 40) return nivel[5];
+    if (imc >= 35) return nivel[4];
+    if (imc >= 30) return nivel[3];
+    if (imc >= 25) return nivel[2];
+    if (imc >= 18.5) return nivel[1];
+    
+    return nivel[0];
 }
 
 function getImc(peso, altura){
+    // Se altura >= 10, assume que foi digitado em cm (ex: 170) e converte para metros
+    if (altura >= 10) {
+        altura = altura / 100;
+    }
+    
     const imc = peso / altura ** 2;
-    return imc.toFixed(2)
+    return parseFloat(imc.toFixed(2));
 }
 
 function criaP () {
@@ -50,17 +57,16 @@ function criaP () {
 
 function setResultado (msg, isValid) {
     const res = document.getElementById('res');
-    res.innerHTML = ``;
+    res.innerHTML = '';
 
     const p = criaP();
 
     if (isValid) {
-        p.classList.add('paragrafo-resultado')
+        p.classList.add('paragrafo-resultado');
     } else {
-        p.classList.add('bad')
+        p.classList.add('bad');
     }
 
-    
-    p.innerHTML = `${msg}`
-    res.appendChild(p)
+    p.innerHTML = msg;
+    res.appendChild(p);
 }
