@@ -11,6 +11,6 @@
 
     falaNome();
     console.log(idade, profissao)
-})(24, 'desenvolvedor');
+})(24, 'desenvolvedor'); // PARAMETROS
 
 const nome = 'Qualquer coisa';
